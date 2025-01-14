@@ -3,7 +3,7 @@ services:
     build: 
       context: ./nginx
     volumes:
-      - ./src:/var/www/html:ro
+      - 'wordpress-files:/var/www/html'
     depends_on:
       - php
     healthcheck:
@@ -19,7 +19,7 @@ services:
     build:
       context: ./php
     volumes:
-      - ./src:/var/www/html
+      - 'wordpress-files:/var/www/html'
     healthcheck:
       test: ["CMD-SHELL", "php-fpm -t || exit 1"]
       interval: 30s
