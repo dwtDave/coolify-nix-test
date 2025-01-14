@@ -36,7 +36,7 @@ services:
   cli:
     image: wordpress:cli
     volumes:
-      - ./src:/var/www/html
+      - 'wordpress-files:/var/www/html'
     user: "33:33"
     environment:
       - WORDPRESS_DB_HOST=db
