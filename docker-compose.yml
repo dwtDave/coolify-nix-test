@@ -46,3 +46,4 @@ services:
       - TZ=UTC
     depends_on:
       - php
+    restart: no
