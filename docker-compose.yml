@@ -20,8 +20,6 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
-    networks:
-      - app-network
     healthcheck:
       test: ["CMD-SHELL", "php-fpm -t || exit 1"]
       interval: 30s
