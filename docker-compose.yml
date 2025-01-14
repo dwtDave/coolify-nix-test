@@ -16,10 +16,10 @@ services:
       - TZ=UTC
 
   php:
-    image: wordpress:php8.1-fpm
+    build:
+      context: ./php
     volumes:
       - ./src:/var/www/html
-      - ./php/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
     healthcheck:
       test: ["CMD-SHELL", "php-fpm -t || exit 1"]
       interval: 30s
